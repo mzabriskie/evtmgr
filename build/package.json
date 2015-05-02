@@ -1,0 +1,16 @@
+{
+  "name": "evtmgr",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mzabriskie/event-manager.git"
+  },
+  "author": "Matt Zabriskie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mzabriskie/event-manager/issues"
+  },
+  "homepage": "https://github.com/mzabriskie/event-manager"
+}

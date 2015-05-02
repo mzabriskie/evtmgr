@@ -1,0 +1,18 @@
+#!/bin/bash -e
+
+babel=node_modules/.bin/babel
+webpack=node_modules/.bin/webpack
+
+# Clean old build
+rm -rf build/
+
+# Transpile ES6
+$babel -d build/lib ./lib
+
+# Generate bundle
+$webpack lib/index.js build/umd/evtmgr.js
+MINIFY=1 $webpack lib/index.js build/umd/evtmgr.min.js
+
+# Copy package
+cp README.md build/
+node -p 'p=require("./package");p.main="lib";p.scripts=p.devDependencies=undefined;JSON.stringify(p,null,2)' > build/package.json

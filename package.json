@@ -1,0 +1,26 @@
+{
+  "name": "evtmgr",
+  "version": "0.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "./scripts/build && ./scripts/test",
+    "build": "./scripts/build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:mzabriskie/event-manager.git"
+  },
+  "author": "Matt Zabriskie",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mzabriskie/event-manager/issues"
+  },
+  "homepage": "https://github.com/mzabriskie/event-manager",
+  "devDependencies": {
+    "babel": "^5.2.6",
+    "babel-core": "^5.2.6",
+    "babel-loader": "^5.0.0",
+    "webpack": "^1.8.10"
+  }
+}
