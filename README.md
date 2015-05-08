@@ -1,4 +1,4 @@
-# evtmgr
+# evtmgr [![build status](https://img.shields.io/travis/mzabriskie/evtmgr.svg?style=flat-square)](https://travis-ci.org/mzabriskie/evtmgr)
 
 Helper for managing event handlers
 
