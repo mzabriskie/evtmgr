@@ -10,8 +10,8 @@ rm -rf build/
 $babel -d build/lib ./lib
 
 # Generate bundle
-$webpack lib/index.js build/umd/evtmgr.js
-MINIFY=1 $webpack lib/index.js build/umd/evtmgr.min.js
+$webpack lib/index.js dist/evtmgr.js
+MINIFY=1 $webpack lib/index.js dist/evtmgr.min.js
 
 # Copy package
 cp README.md build/
