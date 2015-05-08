@@ -6,6 +6,8 @@ Helper for managing event handlers
 
 ```bash
 $ npm install evtmgr
+# or
+$ bower install evtmgr
 ```
 
 ## Overview
