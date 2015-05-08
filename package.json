@@ -21,6 +21,7 @@
     "babel": "^5.2.6",
     "babel-core": "^5.2.6",
     "babel-loader": "^5.0.0",
+    "nodeunit": "^0.9.1",
     "webpack": "^1.8.10"
   }
 }
