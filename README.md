@@ -21,6 +21,59 @@ Specifically useful when:
 - Adding handlers that use `bind`, and need to be removed
 - Conveniently remove all added handlers
 
+##### Example
+
+React provides a good use case.
+
+```js
+import React, { Component } from 'react';
+import EventManager from 'evtmgr';
+
+class Menu extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      pinned: false
+    };
+
+    this.evtmgr = new EventManager();
+    this.evtmgr.register(window, 'scroll', this.handleWindowScroll.bind(this));
+  }
+
+  componentDidMount() {
+    this.evtmgr.attach();
+  }
+
+  componentWillUnmount() {
+    this.evtmgr.detach();
+  }
+
+  handleWindowScroll() {
+    this.setState({
+      pinned = document.body.scrollTop >= 100
+    });
+  }
+
+  render() {
+    var style = {};
+    if (this.state.pinned) {
+      style.position = 'fixed';
+      style.top = 0;
+    } else {
+      style.position = 'absolute';
+      style.top = 100;
+    }
+
+    return (
+      <menu style={style}>
+        {/*...*/}
+      </menu>
+    );
+  }
+}
+```
+
 ## API
 
 #### `register(obj, type, handler)`
@@ -101,8 +154,27 @@ Attach registered event handlers to the objects for which they handle events
 Attaching can only be done once, so subsequent calls will have no effect,
 unless `detach` is called.
 
+##### Example
+
+```js
+// Registration does nothing until attach is called
+manager.register(el, 'click', function () {/*...*/});
+manager.attach();
+// Now el.click() will be handled
+```
+
 #### `detach`
 Detach registered event handlers from the objects for which they handle events
+
+##### Example
+
+```js
+// Attach all the event handlers
+manager.attach();
+
+// Once handlers are no longer wanted
+manager.detach();
+```
 
 ## License
 
