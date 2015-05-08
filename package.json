@@ -1,8 +1,12 @@
 {
   "name": "evtmgr",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Helper for managing event handlers",
   "main": "lib/index.js",
+  "keywords": [
+    "event",
+    "manager"
+  ],
   "scripts": {
     "test": "./scripts/build && ./scripts/test",
     "build": "./scripts/build"

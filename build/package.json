@@ -1,8 +1,12 @@
 {
   "name": "evtmgr",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Helper for managing event handlers",
   "main": "lib",
+  "keywords": [
+    "event",
+    "manager"
+  ],
   "repository": {
     "type": "git",
     "url": "git@github.com:mzabriskie/evtmgr.git"

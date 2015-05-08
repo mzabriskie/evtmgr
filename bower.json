@@ -1,0 +1,31 @@
+{
+  "name": "evtmgr",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mzabriskie/evtmgr",
+  "authors": [
+    "Matt Zabriskie"
+  ],
+  "description": "Helper for managing event handlers",
+  "main": "dist/evtmgr.js",
+  "moduleType": [
+    "amd",
+    "globals",
+    "node"
+  ],
+  "keywords": [
+    "event",
+    "manager"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "build",
+    "test",
+    "scripts",
+    "package.json",
+    "webpack.config.js"
+  ]
+}
