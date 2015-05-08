@@ -1,7 +1,7 @@
 {
   "name": "evtmgr",
   "version": "0.0.0",
-  "description": "",
+  "description": "Helper for managing event handlers",
   "main": "lib/index.js",
   "scripts": {
     "test": "./scripts/build && ./scripts/test",
@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:mzabriskie/event-manager.git"
+    "url": "git@github.com:mzabriskie/evtmgr.git"
   },
   "author": "Matt Zabriskie",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mzabriskie/event-manager/issues"
+    "url": "https://github.com/mzabriskie/evtmgr/issues"
   },
-  "homepage": "https://github.com/mzabriskie/event-manager",
+  "homepage": "https://github.com/mzabriskie/evtmgr",
   "devDependencies": {
     "babel": "^5.2.6",
     "babel-core": "^5.2.6",
