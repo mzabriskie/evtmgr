@@ -8,31 +8,92 @@ Helper for managing event handlers
 $ npm install evtmgr
 ```
 
+## Overview
+
+Can be used with anything that emits an event:
+- `addEventListener`
+- `addListener`
+- `attachEvent`
+- `addEvent`
+
+Specifically useful when:
+- Adding/removing handlers on a lifecycle hook
+- Adding handlers that use `bind`, and need to be removed
+- Conveniently remove all added handlers
+
 ## API
 
 #### `register(obj, type, handler)`
 Register an event handler
 
-##### obj
+##### `obj`
 An object that emits an event
 
-##### type
+##### `type`
 The event type
 
-##### handler
+##### `handler`
 The function that handles the event
+
+##### Example
+
+```js
+var EventEmitter = require('events').EventEmitter;
+var EventManager = require('evtmgr');
+var emitter = new EventEmitter();
+var manager = new EventManager();
+
+// Register a single handler
+manager.register(emitter, 'someEvent', (e) => {
+  console.log('someEvent was fired');
+});
+
+// Register handlers for multiple events
+manager.register(emitter, {
+  insert: (e) => {
+    console.log('insert fired');
+  },
+  update: (e) => {
+    console.log('update fired');
+  },
+  delete: (e) => {
+    console.log('delete fired');
+  }
+});
+```
 
 #### `unregister(obj, type, handler)`
 Unregister an event handler
 
-##### obj
+##### `obj`
 An object that emits an event
 
-##### type
+##### `type`
 The event type
 
-##### handler
+##### `handler`
 The function that handles the event
+
+##### Example
+
+```js
+var EventEmitter = require('events').EventEmitter;
+var EventManager = require('evtmgr');
+var emitter = new EventEmitter();
+var manager = new EventManager();
+
+function handleFoo() {}
+function handleBar() {}
+
+// Register handlers
+manager.register(emitter, {
+  foo: handleFoo,
+  bar: handleBar
+});
+
+// Actually, don't want to handle bar
+manager.unregister(emitter, 'bar', handleBar);
+```
 
 #### `attach`
 Attach registered event handlers to the objects for which they handle events
